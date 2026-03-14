@@ -37,7 +37,8 @@ jobs:
         with:
           combine: true
           target: ${{ matrix.config.target }}
-          #bindings: TpdeaX/bindings
+          bindings: hiimjustin000/bindings
+          bindings-ref: main
           
   package:
     name: Package builds
@@ -48,7 +49,7 @@ jobs:
       - uses: geode-sdk/build-geode-mod/combine@main
         id: build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Build Output
           path: ${{ steps.build.outputs.build-output }}
